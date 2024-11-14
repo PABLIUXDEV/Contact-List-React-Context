@@ -46,7 +46,7 @@ export const AddContact = () => {
 			</div>
 			<div class="mb-3">
 				<Link to="/">
-					or get back to contacts
+					or get back to contact
 				</Link>
 			</div>
 		</div>
