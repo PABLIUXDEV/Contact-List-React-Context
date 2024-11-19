@@ -27,16 +27,32 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => setStore({ "contacts": data.contacts }));
 			},
-			updateContacts: (contactId) => {
+			updateContacts: async (updatedContact) => {
 
-				fetch("https://playground.4geeks.com/contact/agendas/pdavila/contacts/" + contactId, { method: "PUT" }).then(response => response.json()).then(data => setStore({ "contacts": data.contacts }))
-
+				fetch("https://playground.4geeks.com/contact/agendas/pdavila/contacts/", { 
+					method: "PUT", 
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(updatedContact)
+				})
+					.then(response => response.json())
+					.then(data => setStore({ "contacts": data.contacts }));
 			},
+			
 			deleteContacts: (contactId) => {
-
-				fetch("https://playground.4geeks.com/contact/agendas/pdavila/contacts/" + contactId, { method: "DELETE" }).then(response => response.json()).then(data => setStore({ "contacts": data.contacts }))
-
-			},
+				fetch(`https://playground.4geeks.com/contact/agendas/nath1710/contacts/${contactId}`, {
+					method: "DELETE",
+				})
+					.then(response => {
+						if (response.ok) {
+							const currentContacts = getStore().contacts;
+							const updatedContacts = currentContacts.filter(contact => contact.id !== contactId);
+							setStore({ contacts: updatedContacts });
+						}
+					})
+					.catch(error => console.error("Error deleting contact:", error));
+			}
 
 		}
 	};
