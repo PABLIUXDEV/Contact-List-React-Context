@@ -1,11 +1,11 @@
 import React, { Component, useState, useContext } from "react";
-
+import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faLocationDot, faPhone, faEnvelope, faPencil, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export const ContactCard = ({contact}) => {
-    // const { actions } = useContext(Context);
+    const { actions } = useContext(Context);
     const [showModal, setShowModal] = useState(false);
     const handleDeleteClick = () => {
         setShowModal(true);

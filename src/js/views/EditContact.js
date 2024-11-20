@@ -13,23 +13,23 @@ export const EditContact = () => {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [address, setAddress] = useState('');
-	const params = useParams()
-	console.log(params)
-	
-	useEffect(() => {
-        const contact = store.contacts.find(contact => contact.id === parseInt(id)); 
-        if (contact) {
-            setName(contact.name);
-            setEmail(contact.email);
-            setPhone(contact.phone);
-            setAddress(contact.address);
-        }
-    }, [id, store.contacts]);
+	// const params = useParams()
+	// console.log(params)
+	console.log(id)
+	// useEffect(() => {
+    //     const contact = store.contacts.find(contact => contact.id === parseInt(id)); 
+    //     if (contact) {
+    //         setName(contact.name);
+    //         setEmail(contact.email);
+    //         setPhone(contact.phone);
+    //         setAddress(contact.address);
+    //     }
+    // }, [id, store.contacts]);
 
 
 	const handleSubmit = () => {
-		const updatedContact = { id: parseInt(id), name, email, phone, address };
-		actions.updateContacts(updateContact)
+		const updateContact = { id, name, email, phone, address };
+		actions.updateContacts(id, updateContact)
 		// actions.createContacts(newContact);
 	};
 

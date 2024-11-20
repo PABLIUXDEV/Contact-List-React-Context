@@ -27,9 +27,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(response => response.json())
 					.then(data => setStore({ "contacts": data.contacts }));
 			},
-			updateContacts: async (updatedContact) => {
-
-				fetch("https://playground.4geeks.com/contact/agendas/pdavila/contacts/", { 
+			updateContacts: async (contactId, updatedContact) => {
+				console.log(updatedContact)
+				console.log(contactId)
+				fetch(`https://playground.4geeks.com/contact/agendas/pdavila/contacts/${contactId}`, { 
 					method: "PUT", 
 					headers: {
 						"Content-Type": "application/json"
@@ -41,7 +42,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			
 			deleteContacts: (contactId) => {
-				fetch(`https://playground.4geeks.com/contact/agendas/nath1710/contacts/${contactId}`, {
+				fetch(`https://playground.4geeks.com/contact/agendas/pdavila/contacts/${contactId}`, {
 					method: "DELETE",
 				})
 					.then(response => {
