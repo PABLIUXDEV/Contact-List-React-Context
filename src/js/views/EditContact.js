@@ -7,15 +7,15 @@ import "../../styles/demo.css";
 
 export const EditContact = () => {
 	const { store, actions } = useContext(Context);
-    const { id } = useParams();
+    const { idcontact } = useParams();
 
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [address, setAddress] = useState('');
-	// const params = useParams()
+	const params = useParams()
 	// console.log(params)
-	console.log(id)
+	console.log(idcontact)
 	// useEffect(() => {
     //     const contact = store.contacts.find(contact => contact.id === parseInt(id)); 
     //     if (contact) {
@@ -28,9 +28,9 @@ export const EditContact = () => {
 
 
 	const handleSubmit = () => {
-		const updateContact = { id, name, email, phone, address };
-		actions.updateContacts(id, updateContact)
-		// actions.createContacts(newContact);
+		const updateContact = { name, email, phone, address };
+		actions.updateContacts(idcontact, updateContact)
+		actions.createContacts(idcontact);
 	};
 
 
