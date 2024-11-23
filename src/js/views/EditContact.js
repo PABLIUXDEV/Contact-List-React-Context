@@ -16,15 +16,15 @@ export const EditContact = () => {
 	const params = useParams()
 	// console.log(params)
 	console.log(idcontact)
-	// useEffect(() => {
-    //     const contact = store.contacts.find(contact => contact.id === parseInt(id)); 
-    //     if (contact) {
-    //         setName(contact.name);
-    //         setEmail(contact.email);
-    //         setPhone(contact.phone);
-    //         setAddress(contact.address);
-    //     }
-    // }, [id, store.contacts]);
+	useEffect(() => {
+        const contact = store.contacts?.find(contact => contact.id === parseInt(idcontact)); 
+        if (contact) {
+            setName(contact.name);
+            setEmail(contact.email);
+            setPhone(contact.phone);
+            setAddress(contact.address);
+        }
+    }, [idcontact, store.contacts]);
 
 
 	const handleSubmit = () => {
