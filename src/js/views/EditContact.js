@@ -35,8 +35,8 @@ export const EditContact = () => {
 
 
 	return (
-		<div className="container">
-			<h1 className="d-flex justify-content-center align-items-center">Edit your contact</h1>
+		<div className="container card mt-3">
+			<h1 className="d-flex justify-content-center align-items-center mt-2">Edit your contact</h1>
 			<div class="mb-3">
 				<label for="nameUser" class="form-label">Full Name</label>
 				<input type="text" value={name} onChange={(e) => setName(e.target.value)} class="form-control" id="nameUser" aria-describedby="nameHelp" placeholder="Full Name" />

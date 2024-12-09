@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
@@ -10,13 +10,19 @@ export const AddContact = () => {
 	const [email, setEmail] = useState('');
 	const [phone, setPhone] = useState('');
 	const [address, setAddress] = useState('');
+	const navigate = useNavigate();
+
 
 	const handleSubmit = () => {
 		const newContact = { name, email, phone, address };
 		actions.createContacts(newContact);
+		if (newContact) {
+			navigate("/")
+		}
 	};
 
 	const { store, actions } = useContext(Context);
+
 
 	return (
 		<div className="container">
