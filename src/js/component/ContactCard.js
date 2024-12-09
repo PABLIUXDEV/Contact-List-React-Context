@@ -28,10 +28,10 @@ export const ContactCard = ({contact}) => {
         </div>
         <div >
             <div className="information">
-                <p>{contact.name}</p>
-                <p>{contact.address}</p>
-                <p>{contact.phone}</p>
-                <p>{contact.email}</p>
+            <p><i class="fa-solid fa-person icon"></i>{contact.name}</p>
+            <p><i class="fa-solid fa-location-dot icon"></i>{contact.address}</p>
+            <p><i class="fa-solid fa-phone icon"></i>{contact.phone}</p>
+            <p><i class="fa-solid fa-envelope icon"></i>{contact.email}</p>
             <div >
                 <Link to={`/edit-contact/${contact.id}`}>
                 <button className="btn btn-success">EditContact</button>

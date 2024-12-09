@@ -11,7 +11,7 @@ export const Home = () => {
 
 
 	return (
-		<div className="text-center mt-5">
+		<div className="text-center mt-5 background">
 			<div>
 				<h1>Welcome to your contact list!</h1>
 				

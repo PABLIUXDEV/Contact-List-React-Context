@@ -1,6 +1,15 @@
 /* 
     General Styles
 */
+
+.background {
+    background-color: white;
+opacity: 0.8;
+background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+background-size: 20px 20px;
+background-position: 0 0,10px 10px;
+}
+
 .mastercontainer {
     display: flex;
     border: 1px solid grey;
@@ -32,6 +41,7 @@
     flex-direction: column;
     gap: 10px;
     padding: 15px;
+    text-align: left;
 }
 
 .info-item {
@@ -45,7 +55,7 @@
     display: flex;
     justify-content: center;
     align-self: flex-start;
-    color: #666;
+    color: black;
 }
 
 .icons-container {
@@ -88,3 +98,4 @@
     display: flex;
 
 }
+
